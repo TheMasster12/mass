@@ -1,25 +1,25 @@
 # mass
 
-[![Dependency Status](https://gemnasium.com/TheMasster12/mass.png)](https://gemnasium.com/TheMasster12/mass)
 ![GA Beacon](https://ga-beacon.appspot.com/UA-43696434-2/mass/readme)
 
 > A 3-D particle physics simulator powered by WebGL.
 
-This is a port of the [Force-Over-Acceleration](https://github.com/TheMasster12/force-over-acceleration) project from Python to JavaScript.
+## About
+This is a port of my [Force-Over-Acceleration](https://github.com/TheMasster12/force-over-acceleration) project from Python to JavaScript. The intention is to create a web application that is able to run on numerous platforms.
 
-Planned Features
----
+## Motivation
+I have always taken a keen interest in physics, so I have actively searched for ways to combine it with computer science. I came up with the idea for this project while pondering the [Simulated Reality Theory](http://en.wikipedia.org/wiki/Simulated_reality). I hope to advance the project to the point where highly complex visual simulations are possible.
 
-- Basic 3-D rendering
+## Future Features
 - Particle interaction logic
-- Approximation algorithms
-- Run calculations on GPU
+- Approximation algorithms ([Barnes-Hut](http://en.wikipedia.org/wiki/Barnes%E2%80%93Hut_simulation))
+- Offload calculations to GPU
 - Import simulation files
-- Improved graphics / textures
+- Improved graphics and textures
+- Debug data and framerate information
+- Keyboard commands for controlling the simulation
 
-Libraries & Systems
----
+## Dependencies
 * [three.js](https://github.com/mrdoob/three.js)
 * [requireJS](https://github.com/jrburke/requirejs)
-* [JQuery](https://github.com/jquery/jquery)
-* [Grunt](http://gruntjs.com)
+* [Lo-Dash](https://github.com/lodash/lodash)
