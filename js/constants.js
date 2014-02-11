@@ -11,7 +11,7 @@ define(function(require) {
   var Constants = {};
 
   // Simulation
-  Constants.NUM_PARTICLES = 500;
+  Constants.NUM_PARTICLES = 2000;
   Constants.UNIVERSE_SIZE = 1000;
   Constants.GALAXY_SIZE = 500;
   Constants.MAX_VELOCITY = 5;

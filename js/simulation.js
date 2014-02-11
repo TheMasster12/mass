@@ -13,8 +13,7 @@ define(function(require) {
   var Particle = require('particle');
 
   var Simulation = {
-    keysDown: {},
-    particles: []
+    keysDown: {}
   };
 
   Simulation.start = function() {
@@ -36,19 +35,24 @@ define(function(require) {
 
     document.getElementById('view-container').appendChild(Simulation.renderer.domElement);
 
-    // Adds boundary particles.
-    Simulation.particles.push(new Particle(Simulation.scene, new THREE.Vector3(0, 0, 0), new THREE.Vector3(0,0,0), 75));
-    Simulation.particles.push(new Particle(Simulation.scene, new THREE.Vector3(Constants.GALAXY_SIZE, 0, 0), new THREE.Vector3(0,0,0), 75));
-    Simulation.particles.push(new Particle(Simulation.scene, new THREE.Vector3(-Constants.GALAXY_SIZE, 0, 0), new THREE.Vector3(0,0,0), 75));
-    Simulation.particles.push(new Particle(Simulation.scene, new THREE.Vector3(0, Constants.GALAXY_SIZE, 0), new THREE.Vector3(0,0,0), 75));
-    Simulation.particles.push(new Particle(Simulation.scene, new THREE.Vector3(0, -Constants.GALAXY_SIZE, 0), new THREE.Vector3(0,0,0), 75));
-    Simulation.particles.push(new Particle(Simulation.scene, new THREE.Vector3(0, 0, Constants.GALAXY_SIZE), new THREE.Vector3(0,0,0), 75));
-    Simulation.particles.push(new Particle(Simulation.scene, new THREE.Vector3(0, 0, -Constants.GALAXY_SIZE), new THREE.Vector3(0,0,0), 75));
+    Simulation.particles = new THREE.Geometry();
+    Simulation.particleMaterial = new THREE.ParticleBasicMaterial({
+      color: 0xFFFFFF,
+      size: 20,
+      map: THREE.ImageUtils.loadTexture(
+        "particle.png"
+      ),
+      blending: THREE.AdditiveBlending,
+      transparent: true
+    });
 
-    // Adds random smaller particles within the boundary.
-    for(var i=0; i<Constants.NUM_PARTICLES; i++) {
-      Simulation.particles.push(new Particle(Simulation.scene, Util.randomStartPos(), Util.randomStartVel(), 20));
+    for(var i = 0; i < Constants.NUM_PARTICLES; i++) {
+      Simulation.particles.vertices.push(Util.randomStartPos());
     }
+
+    Simulation.particleSystem = new THREE.ParticleSystem(Simulation.particles, Simulation.particleMaterial);
+    Simulation.particleSystem.sortParticles = true;
+    Simulation.scene.add(Simulation.particleSystem);
 
     initLighting();
 
