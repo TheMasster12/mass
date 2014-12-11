@@ -1,11 +1,9 @@
-# mass
-
-![GA Beacon](https://ga-beacon.appspot.com/UA-43696434-2/mass/readme)
+# force-over-acceleration.js ![GA Beacon](https://ga-beacon.appspot.com/UA-43696434-2/mass/readme)
 
 > A 3-D particle physics simulator powered by WebGL.
 
 ## About
-This is a port of my [Force-Over-Acceleration](https://github.com/TheMasster12/force-over-acceleration) project from Python to JavaScript. The intention is to create a web application that is able to run on numerous platforms.
+This is a port of my [force-over-acceleration](https://github.com/mass/force-over-acceleration) project from Python to JavaScript. The intention is to create a web application that is able to run on numerous platforms.
 
 ## Motivation
 I have always taken a keen interest in physics, so I have actively searched for ways to combine it with computer science. I came up with the idea for this project while pondering the [Simulated Reality Theory](http://en.wikipedia.org/wiki/Simulated_reality). I hope to advance the project to the point where highly complex visual simulations are possible.
